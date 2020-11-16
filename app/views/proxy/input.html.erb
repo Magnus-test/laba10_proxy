@@ -1,2 +1,14 @@
-<h1>Proxy#input</h1>
-<p>Find me in app/views/proxy/input.html.erb</p>
+<%= form_tag  url_for(controller: :proxy, action: :view), method: 'get' do %>
+  <label>Enter value(>0):</label>
+  <input type="number" pattern="^[\d]+$" name="val" id="val" placeholder="45" />
+  <div>
+    <label>Method:</label>
+    <select name="side">
+      <option value="server">Server XSLT</option>
+      <option value="client-with-xslt">Client XSLT</option>
+      <option value="client">RAW</option>
+    </select>
+  </div>
+  <br>
+  <input type="submit"  value="find"/>
+<% end %>
